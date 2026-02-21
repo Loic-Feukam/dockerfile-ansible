@@ -1,0 +1,23 @@
+services:
+  master:
+    image: loicmeng/ansible
+    working_dir: /root/ansible
+    volumes:
+      - .:/root/ansible
+    command: tail -f /dev/null
+    
+
+  webserver:
+    image: loicmeng/ansible_client
+
+
+
+  dbserver:
+    image: loicmeng/ansible_client
+
+
+
+  lbserver:
+    image: loicmeng/ansible_client
+    ports: 
+    - "8080:80"
